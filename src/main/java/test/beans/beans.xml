@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<bean id="venit" class="test.Venit">
+		<constructor-arg value="1" index="0"></constructor-arg>
+		<constructor-arg value="Salariu Allianz" index="1">
+		</constructor-arg>
+		<property name="valoare" value="26750"></property>
+	</bean>
+	<bean id="cheltuiala" class="test.Cheltuiala">
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg index="1" value="Mancare"></constructor-arg>
+		<property name="valoare" value="53.21"></property>
+	</bean>
+	<bean id="profit" class="test.Profit">
+		<property name="venit" ref="venit"></property>
+		<property name="cheltuiala" ref="cheltuiala"></property>
+	</bean>
+</beans>
